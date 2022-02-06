@@ -93,9 +93,15 @@ class garage:
             sleep(1)
             if self.pins.reed_switch():
                 self.yeeter.updateCurrentState(0)
+                self.yeeter.updateTargetState(0)
+                self.currentDoorState = 0
+                self.targetDoorState = 0
                 break
             elif i == 30:
                 self.yeeter.updateCurrentState(1)
+                self.yeeter.updateTargetState(1)
+                self.currentDoorState = 1
+                self.targetDoorState = 1
 
     def background_refresh(self):
         threading.Thread(target=self.__background_refresh).start()

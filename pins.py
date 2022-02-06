@@ -21,7 +21,7 @@ class PinClass:
     def __press(self):
         print("Press thread started")
         GPIO.output(self.out_pin, GPIO.LOW)
-        sleep(1)
+        sleep(0.3)
         GPIO.output(self.out_pin, GPIO.HIGH)
 
     def reed_switch(self) -> bool:
